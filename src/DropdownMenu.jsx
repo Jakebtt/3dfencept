@@ -1,4 +1,3 @@
-// DropdownMenu.jsx
 import React, { useState } from 'react';
 
 const DropdownMenu = ({ onSelect }) => {
@@ -18,9 +17,9 @@ const DropdownMenu = ({ onSelect }) => {
       </button>
       {isOpen && (
         <div className="dropdown-content">
-          <div onClick={() => handleSelect('Woodgrain')}>Woodgrain</div>
-          <div onClick={() => handleSelect('Solid Colors')}>Solid Colors</div>
-          <div onClick={() => handleSelect('Colors of Australia')}>Colors of Australia</div>
+          <div onClick={() => handleSelect('Woodgrain')} id="woodgrain" name="woodgrain">Woodgrain</div>
+          <div onClick={() => handleSelect('Solid Colors')} id="solid-colors" name="solid-colors">Solid Colors</div>
+          <div onClick={() => handleSelect('Colors of Australia')} id="colors-of-australia" name="colors-of-australia">Colors of Australia</div>
         </div>
       )}
     </div>

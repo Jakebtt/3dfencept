@@ -68,7 +68,7 @@ button:hover div {
   right: 0;
   z-index: 1;
   
-  background-image: url('/ColorBG.jpg');
+  background-image: url('/3dfencept//ColorBG.jpg');
   background-size: cover; /* Adjust this property as needed */
   background-position: center; /* Adjust this property as needed */
   border-radius: 10px; /* Optional: add some rounded corners */
@@ -92,7 +92,7 @@ button:hover div {
   z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
-..color-name-container {
+.color-name-container {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */

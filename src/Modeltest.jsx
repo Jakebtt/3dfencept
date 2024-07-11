@@ -4,7 +4,7 @@ import { TextureLoader } from 'three';
 
 export function Model({ textureUrl }) {
   const group = useRef();
-  const { nodes, materials } = useGLTF('/modeltest.glb');
+  const { nodes, materials } = useGLTF('/3dfencept/modeltest.glb');
   const texture = new TextureLoader().load(textureUrl);
 
   useEffect(() => {
@@ -192,4 +192,4 @@ export function Model({ textureUrl }) {
   )
 }
 
-useGLTF.preload('/modeltest.glb')
+useGLTF.preload('/3dfencept/modeltest.glb')
