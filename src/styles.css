@@ -85,9 +85,9 @@ button:hover div {
 
 .logo {
   position: absolute;
-  top: 50px; /* Adjust the top margin as needed */
-  right: 1720px; /* Adjust the right margin as needed */
-  width: 150px; /* Adjust the width as needed */
+  top: 650px; /* Adjust the top margin as needed */
+  right: 20px; /* Adjust the right margin as needed */
+  width: 250px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   z-index: 1000; /* Ensure it stays on top of other elements */
 }
@@ -97,22 +97,21 @@ button:hover div {
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   width: 100%;
-  margin-top: 5px;
+  margin-top: 10px;
   color: black;
 }
 
 .color-name {
   white-space: normal; /* Prevent text from wrapping */
-  overflow: hidden; /* Hide overflowed text */
-  text-align: center; /* Center text within the div */
-  text-overflow: ellipsis; /* Show ellipsis (...) when text overflows */
+  overflow: visible; /* Make sure text isn't cut off */
+  text-overflow: initial;
   font-size: 16px; /* Adjust the font size if needed */
   padding: 0 10px; /* Add padding to avoid text touching edges */
 }
 
 .category-dropdown {
   position: absolute;
-  top: 140px; /* Adjust based on logo size */
+  top: 185px; /* Adjust based on logo size */
   left: 10px; /* Align with the logo */
   z-index: 1000;
   padding: 5px;
@@ -122,7 +121,7 @@ button:hover div {
 
 .slat-size-dropdown, .spacer-size-dropdown {
   position: absolute;
-  top: 200px; /* Adjust based on logo size */
+  top: 225px; /* Adjust based on logo size */
   left: 10px; /* Align with the logo */
   z-index: 1000;
   padding: 5px;
@@ -134,7 +133,7 @@ button:hover div {
 }
 .slat-size-dropdown, .spacer-size-dropdown {
   position: absolute;
-  top: 200px; /* Adjust based on logo size */
+  top: 225px; /* Adjust based on logo size */
   left: 10px; /* Align with the logo */
   z-index: 1000;
   padding: 5px;
@@ -142,5 +141,19 @@ button:hover div {
 }
 
 .spacer-size-dropdown {
-  top: 240px; /* Adjust this value based on the slat size dropdown position */
+  top: 265px; /* Adjust this value based on the slat size dropdown position */
+}
+
+.disclaimer-container {
+  position: absolute; /* Makes the container fixed to a specific location */
+  top: 900px;
+  bottom: 0; /* Aligns the container at the bottom of the page */
+  left: 0; /* Aligns the container to the left edge */
+  width: 100%; /* Makes the disclaimer stretch across the entire width */
+  background-color: rgba(0, 0, 0, 0); /* Semi-transparent background for readability */
+  color: white; /* White text color for contrast */
+  padding: 10px; /* Space inside the container */
+  text-align: center; /* Center the text horizontally */
+  font-size: 14px; /* Adjust the font size as needed */
+  z-index: 1000; /* Ensure the disclaimer stays on top of other elements */
 }
