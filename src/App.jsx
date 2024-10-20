@@ -18,8 +18,9 @@ import TextureButton from './TextureButton';
 import DropdownMenu from './DropdownMenu';
 import './styles.css';
 
-const slatSizes = ['1.5inch slat', '2.5inch slat', '4inch slat', '6inch slat', 'test'];
-const spacerSizes = ['0.25inch spacing', '0.5inch spacing', '1inch spacing', 'test'];
+
+const slatSizes = ['1.5inch slat', '2.5inch slat', '4inch slat', '6inch slat'];
+const spacerSizes = ['0.25inch spacing', '0.5inch spacing', '1inch spacing'];
 
 const modelMapping = {
   '1.5inch slat': {
@@ -43,7 +44,7 @@ const modelMapping = {
   '6inch slat': {
     '0.25inch spacing': Modelj,
     '0.5inch spacing': Modelk,
-    '1inch spacing': Modell,
+    '1inch spacing': Modeltest,
     'test': Modeltest,
   },
   'test': {
@@ -75,7 +76,6 @@ const textures = [
   { url: '/3dfencept/Knotty_Pine.jpg', name: 'Knotty Pine', category: 'Standard Woodgrains' },
   { url: '/3dfencept/Kwila.jpg', name: 'Kwila', category: 'Standard Woodgrains' },
   { url: '/3dfencept/Light_Oak.jpg', name: 'Light Oak', category: 'Standard Woodgrains' },
-  { url: '/3dfencept/Maple_Oak.jpg', name: 'Maple Oak', category: 'Standard Woodgrains' },
   { url: '/3dfencept/Royal_Oak.jpg', name: 'Royal Oak', category: 'Standard Woodgrains' },
   { url: '/3dfencept/Savannah_Oak.jpg', name: 'Savannah Oak', category: 'Standard Woodgrains' },
   { url: '/3dfencept/Spotted_Gum.jpg', name: 'Spotted Gum', category: 'Standard Woodgrains' },
@@ -98,7 +98,7 @@ const textures = [
   // Solid Colors
   { url: '/3dfencept/Admiral_Blue.jpg', name: 'Admiral Blue', category: 'Solid Colors' },
   { url: '/3dfencept/Carbon.jpg', name: 'Carbon', category: 'Solid Colors' },
-  { url: '/3dfencept/Mistr.jpg', name: 'Mistr', category: 'Solid Colors' },
+  { url: '/3dfencept/Mistr.jpg', name: 'Mist', category: 'Solid Colors' },
   { url: '/3dfencept/Midnight_Black.jpg', name: 'Midnight Black', category: 'Solid Colors' },
   { url: '/3dfencept/Sandstone.jpg', name: 'Sandstone', category: 'Solid Colors' },
   { url: '/3dfencept/Slate_Grey.jpg', name: 'Slate Grey', category: 'Solid Colors' },
@@ -107,7 +107,7 @@ const textures = [
   { url: '/3dfencept/Vapor_Grey.jpg', name: 'Vapor Grey', category: 'Solid Colors' },
   { url: '/3dfencept/Sterling.jpg', name: 'Sterling', category: 'Solid Colors' },
 
-  // Colors of Aus
+  // Colors of Aus colors of 
   { url: '/3dfencept/Aspen.jpg', name: 'Aspen', category: 'Colors of Aus' },
   { url: '/3dfencept/Black_Cedar.jpg', name: 'Black Cedar', category: 'Colors of Aus' },
   { url: '/3dfencept/French_Walnut.jpg', name: 'French Walnut', category: 'Colors of Aus' },
@@ -128,8 +128,8 @@ const textures = [
 const App = () => {
   const [textureUrl, setTextureUrl] = useState(textures[0].url);
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
-  const [selectedSlatSize, setSelectedSlatSize] = useState(slatSizes[0]);
-  const [selectedSpacerSize, setSelectedSpacerSize] = useState(spacerSizes[0]);
+const [selectedSlatSize, setSelectedSlatSize] = useState('6inch slat'); // Change to 'test'
+const [selectedSpacerSize, setSelectedSpacerSize] = useState('1inch spacing'); // Change to 'test
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -148,7 +148,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <img src="/3dfencept/Alumarch.jpg" alt="Logo" className="logo" />
+      <img src="Alumarch.jpg" alt="Logo" className="logo" />
       <select className="category-dropdown" onChange={handleCategoryChange} value={selectedCategory}>
         {categories.map(category => (
           <option key={category} value={category}>{category}</option>
@@ -173,13 +173,16 @@ const App = () => {
             onClick={() => setTextureUrl(texture.url)}
           />
         ))}
+        <div className="disclaimer-container">
+  <p className="disclaimer-text">Please note that the colors provided are a guide only and have been matched as closely as possible to Knotwood’s production standards. We recommend that you use production line prepared samples for final color selection or approval.</p>
+</div>
       </div>
       <div className="canvas-container">
-        <Canvas camera={{ fov: 70, position: [0, 0, 5] }}>
+        <Canvas camera={{ fov: 55, position: [8, 0, 0] }}>
           <OrbitControls />
           <ambientLight intensity={0.3} />
           <directionalLight position={[10, 10, 10]} />
-          <ModelComponent textureUrl={textureUrl} />
+          <ModelComponent textureUrl={textureUrl} rotation={[0, Math.PI / 2, 0]} />
         </Canvas>
       </div>
     </div>
